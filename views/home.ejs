@@ -1,8 +1,46 @@
 <html>
     <head>
-        <title>TODO List App</title>
+        <title><%= locals.title %></title>
+
+        <link rel="stylesheet" href="/css/home.css">
     </head>
     <body>
-        <h1>TODO List Rendering the Page</h1>
+        <h1><%= locals.title %></h1>
+        <form action="" method="POST">
+
+            <div>
+                <!-- Task Description Input -->
+                <label for="descriptionField">Description</label>
+                <input type="text" name="description" id="descriptionField" placeholder="What do you need to do?" required>
+            </div>
+
+            <div>
+                <!-- Task Category Input -->
+                <label for="categoryField">Category</label>
+                <select id="categoryField" name="category" required>
+                <option>Choose a category</option>
+                <option value="PERSONAL">Personal</option>
+                <option value="WORK">Work</option>
+                <option value="SCHOOL">School</option>
+                <option value="CLEANING">Cleaning</option>
+                <option value="OTHER">Other</option>
+                </select>
+                
+                <!-- Task Due Date Input -->
+                <label for="due-date-field">Due Date</label>
+                <input type="date" id="due-date-field" name="dueDate" required>
+            </div>
+
+            <div id="buttons">
+                <!-- Add Task Button -->
+                <button id="add-btn" type="submit" class="btn btn-dark"><i class="fas fa-plus"></i> Add Task</button>
+            </div>
+
+
+        </form>
+
+
+        <!-- Font Awesome Script -->
+        <script src="https://kit.fontawesome.com/80a786f28a.js" crossorigin="anonymous"></script>
     </body>
 </html>
