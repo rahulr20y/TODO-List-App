@@ -1,7 +1,7 @@
 
 
-
-const arr = [
+//dummy Task List
+var arr = [
     { 
         description: 'Task 1',
         category: 'PERSONAL',
@@ -39,7 +39,19 @@ module.exports.createTask = function(req,res){
 }
 
 
+module.exports.deleteTask = function(req,res){
 
+    console.log(req.query);
+    let description = req.query.description;
+    let taskIndex=arr.findIndex(task => task.description == description);
+
+    if(taskIndex != -1){
+        arr.splice(taskIndex,1);
+    }
+
+    return res.redirect('back');
+
+}
 
 
 module.exports.home = function(req,res){
