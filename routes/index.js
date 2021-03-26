@@ -10,6 +10,7 @@ console.log('router loaded');
 
 router.get('/',homeController.home);
 
+router.post('/create-task',homeController.createTask);
 
 
 

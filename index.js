@@ -11,6 +11,9 @@ const app = express();
 app.set('view engine','ejs'); 
 app.set('views',path.join(__dirname,'views'));
 
+app.use(express.urlencoded()); //parser middleware
+app.use(express.static('assets'));
+
 
 
 //use express router

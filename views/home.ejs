@@ -6,7 +6,7 @@
     </head>
     <body>
         <h1><%= locals.title %></h1>
-        <form action="" method="POST">
+        <form action="create-task" method="POST">
 
             <div>
                 <!-- Task Description Input -->
@@ -38,6 +38,13 @@
 
 
         </form>
+        <div>
+            <% for(let i of tasks){ %>
+                <p><%= i.description %></p>
+                <p><%= i.category %></p>
+                <p><%= i.dueDate %></p>
+            <% } %>    
+        </div>
 
 
         <!-- Font Awesome Script -->
