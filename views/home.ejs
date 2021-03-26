@@ -40,7 +40,7 @@
         </form>
         <div>
             <ul>
-                <% for(let i of tasks){ %>
+                <% for(let i of task_list){ %>
                       <li class="tasks">
                           <div class="details">
                             <p><%= i.description %></p>
@@ -48,7 +48,7 @@
                             <p><%= i.dueDate %></p>
                           </div>
                           <div class="delete-button">
-                               <a href="/delete-task/?description=<%= i.description %>">
+                               <a href="/delete-task/?id=<%= i._id %>">
                                    <i class="fas fa-window-close"></i>
                                </a>
                           </div>
