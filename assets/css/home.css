@@ -14,6 +14,7 @@ body{
 #todo-heading{
     width: 100%;
     text-align: center;
+    color: rgb(156, 13, 13);
 }
 
 #todo-input{
@@ -22,6 +23,7 @@ body{
     font-size: 1.2rem;
 }
 .todo-input-container{
+    padding: 10px;
     width: 100%;
     margin: auto;
 }
@@ -47,7 +49,16 @@ body{
     font-size: 1.1rem;
     line-height: inherit;
     color: white;
-    background-color: black;
+    background-color: rgb(41, 33, 33);
+    width: 20%;
+    height: auto;
+}
+
+#delete-task-btn{
+    font-family: inherit;
+    line-height: inherit;
+    color: white;
+    background-color: rgb(218, 16, 16);
     width: 20%;
     height: auto;
 }

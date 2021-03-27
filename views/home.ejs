@@ -48,11 +48,11 @@
                                 <hr>
                                 <p><%= i.description %></p>
                                 <p><%= i.category  %></p>
-                                <p><%= i.dueDate %></p>
+                                <p><i class="fas fa-calendar-alt"></i> <%= i.dueDate %></p>
                             </div>
                             <div class="delete-button">
                                 <a href="/delete-task/?id=<%= i._id %>">
-                                    <i class="fas fa-window-close"></i>
+                                    <button id="delete-task-btn" type="submit"><i class="fas fa-trash-alt"></i> Delete Task</button>
                                 </a>
                             </div>
                         </li>
