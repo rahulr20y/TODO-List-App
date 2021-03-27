@@ -1,0 +1,53 @@
+body{
+    margin: 0%;
+    font-family: sans-serif;
+}
+
+#todo-container{
+    width: 40%;
+    margin: auto;
+    justify-content: center;
+    /* border: 2px solid black; */
+    background-color: rgba(115, 238, 221, 0.082);
+}
+
+#todo-heading{
+    width: 100%;
+    text-align: center;
+}
+
+#todo-input{
+    width: 90%;
+    margin: auto;
+    font-size: 1.2rem;
+}
+.todo-input-container{
+    width: 100%;
+    margin: auto;
+}
+#descriptionField {
+    width: 29vw;
+    font-family: inherit;
+    font-size: 1.1rem;
+    line-height: inherit;
+}
+#categoryField,#due-date-field{
+    width: 12.1vw;
+    font-family: inherit;
+    font-size: 1.1rem;
+    line-height: inherit;
+}
+
+#add-task-button{
+    text-align: center;
+}
+
+#add-btn{
+    font-family: inherit;
+    font-size: 1.1rem;
+    line-height: inherit;
+    color: white;
+    background-color: black;
+    width: 20%;
+    height: auto;
+}

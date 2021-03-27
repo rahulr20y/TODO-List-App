@@ -5,61 +5,67 @@
         <link rel="stylesheet" href="/css/home.css">
     </head>
     <body>
-        <h1><%= locals.title %></h1>
-        <form action="create-task" method="POST">
+        <div id="todo-container">
+            <h1 id="todo-heading"><%= locals.title %></h1>
+            <form action="create-task" method="POST" id="todo-input">
 
+                <div class="todo-input-container">
+                    <!-- Task Description Input -->
+                    <label for="descriptionField">Description</label>
+                    <input type="text" name="description" id="descriptionField" placeholder="What do you need to do?" required>
+                </div>
+
+                <div class="todo-input-container">
+                    <!-- Task Category Input -->
+                    <label for="categoryField">Category</label>
+                    <select id="categoryField" name="category" required>
+                    <option>Choose a category</option>
+                    <option value="PERSONAL">Personal</option>
+                    <option value="WORK">Work</option>
+                    <option value="SCHOOL">School</option>
+                    <option value="CLEANING">Cleaning</option>
+                    <option value="OTHER">Other</option>
+                    </select>
+                    
+                    <!-- Task Due Date Input -->
+                    <label for="due-date-field">Due Date</label>
+                    <input type="date" id="due-date-field" name="dueDate" required>
+                </div>
+
+                <div id="add-task-button">
+                    <!-- Add Task Button -->
+                    <button id="add-btn" type="submit"><i class="fas fa-plus"></i> Add Task</button>
+                </div>
+
+
+            </form>
             <div>
-                <!-- Task Description Input -->
-                <label for="descriptionField">Description</label>
-                <input type="text" name="description" id="descriptionField" placeholder="What do you need to do?" required>
+                <ul style="list-style-type: none;">
+                    <% for(let i of task_list){ %>
+                        <li class="tasks" style="list-style-type: none;">
+                            <div class="details">
+                                <br>
+                                <hr>
+                                <p><%= i.description %></p>
+                                <p><%= i.category  %></p>
+                                <p><%= i.dueDate %></p>
+                            </div>
+                            <div class="delete-button">
+                                <a href="/delete-task/?id=<%= i._id %>">
+                                    <i class="fas fa-window-close"></i>
+                                </a>
+                            </div>
+                        </li>
+                    
+                    <%}%>
+                </ul>    
             </div>
-
-            <div>
-                <!-- Task Category Input -->
-                <label for="categoryField">Category</label>
-                <select id="categoryField" name="category" required>
-                <option>Choose a category</option>
-                <option value="PERSONAL">Personal</option>
-                <option value="WORK">Work</option>
-                <option value="SCHOOL">School</option>
-                <option value="CLEANING">Cleaning</option>
-                <option value="OTHER">Other</option>
-                </select>
-                
-                <!-- Task Due Date Input -->
-                <label for="due-date-field">Due Date</label>
-                <input type="date" id="due-date-field" name="dueDate" required>
-            </div>
-
-            <div id="buttons">
-                <!-- Add Task Button -->
-                <button id="add-btn" type="submit" class="btn btn-dark"><i class="fas fa-plus"></i> Add Task</button>
-            </div>
-
-
-        </form>
-        <div>
-            <ul>
-                <% for(let i of task_list){ %>
-                      <li class="tasks">
-                          <div class="details">
-                            <p><%= i.description %></p>
-                            <p><%= i.category  %></p>
-                            <p><%= i.dueDate %></p>
-                          </div>
-                          <div class="delete-button">
-                               <a href="/delete-task/?id=<%= i._id %>">
-                                   <i class="fas fa-window-close"></i>
-                               </a>
-                          </div>
-                      </li>
-                   
-                <%}%>
-            </ul>    
         </div>
 
 
         <!-- Font Awesome Script -->
         <script src="https://kit.fontawesome.com/80a786f28a.js" crossorigin="anonymous"></script>
+
+        <script type="text/javascript" src="/js/home.js"></script>
     </body>
 </html>
